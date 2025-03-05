@@ -1,5 +1,4 @@
 print("welcome to mr. alone supermarket\n")
-
 floors = {
     "5th floor": {
         "category": "groceries",
@@ -73,12 +72,12 @@ if cart:
     subtotal = sum(item["price"] * item["qty"] for item in cart.values())
     discount = 0
     if subtotal > 5000:
-        discount = subtotal * 0.10  # 10% discount
+        discount = subtotal * 0.10
     elif subtotal > 2000:
-        discount = subtotal * 0.05  # 5% discount
+        discount = subtotal * 0.05
     gst = (subtotal - discount) * 0.18
     total = (subtotal - discount) + gst
-    print("\n------ shopping cart ------")
+    print("\nshopping cart")
     for item, details in cart.items():
         print(f"- {item}: {details['qty']} x {details['price']} = {details['qty'] * details['price']}")
     print(f"\nsubtotal: {subtotal:.2f}")
@@ -95,7 +94,7 @@ if cart:
         print("payment successful via upi.")
     else:
         print("invalid payment method.")
-    print("\n------ final bill ------")
+    print("\n final bill")
     print("thank you for shopping at mr. alone supermarket!")
 else:
     print("\ncart is empty.")
